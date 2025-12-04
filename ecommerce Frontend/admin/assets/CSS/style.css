@@ -1,0 +1,12 @@
+:root{--sidebar-width:260px;}
+    body{background:#f4f6f9}
+    .sidebar{width:var(--sidebar-width);height:100vh;position:fixed;left:0;top:0;padding:1rem;border-right:1px solid rgba(0,0,0,.05);background:#fff}
+    .main{margin-left:var(--sidebar-width);padding:1.5rem}
+    .brand{font-weight:700;font-size:1.1rem}
+    .nav-link{color:#333}
+    .nav-link.active{background:#eef2ff;border-radius:.5rem}
+    .card-overview .card{border-radius:12px}
+    .table-responsive{background:#fff;padding:1rem;border-radius:.75rem}
+    .avatar{width:36px;height:36px;border-radius:6px;object-fit:cover}
+    footer{padding:1rem 0;color:#666;font-size:.9rem}
+    @media (max-width: 768px){.sidebar{position:relative;width:100%;height:auto}.main{margin-left:0}}

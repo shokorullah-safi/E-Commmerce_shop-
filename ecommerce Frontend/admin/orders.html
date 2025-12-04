@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/CSS/style.css">
+</head>
+<body>
+
+
+     <aside class="sidebar shadow-sm">
+    <div class="d-flex align-items-center mb-4">
+      <i class="fa-solid fa-store fa-2x text-primary me-2"></i>
+      <div>
+        <div class="brand">Domin E‑Commerce</div>
+        <small class="text-muted">Admin Panel</small>
+      </div>
+    </div>
+
+    <nav class="nav flex-column">
+      <a class="nav-link  mb-1" href="index.html"><i class="fa-solid fa-gauge-high me-2"></i>Dashboard</a>
+      <a class="nav-link active mb-1" href="orders.html"><i class="fa-solid fa-bag-shopping me-2"></i>Orders</a>
+      <a class="nav-link mb-1" href="products.html"><i class="fa-solid fa-box-open me-2"></i>Products</a>
+         <a class="nav-link mb-1" href="categories.html"><i class="fa-solid fa-box-open me-2"></i>Category</a>
+      <a class="nav-link mb-1" href="#"><i class="fa-solid fa-users me-2"></i>Customers</a>
+      <a class="nav-link mb-1" href="#reports"><i class="fa-solid fa-chart-line me-2"></i>Reports</a>
+      <a class="nav-link mb-1" href="#settings"><i class="fa-solid fa-gear me-2"></i>Settings</a>
+    </nav>
+
+    <div class="mt-4">
+      <hr>
+      <small class="text-muted">Quick Actions</small>
+      <div class="d-flex gap-2 mt-2">
+        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#productModal" id="addProductBtn"><i class="fa-solid fa-plus me-1"></i>New</button>
+        <button class="btn btn-sm btn-outline-secondary" id="exportBtn"><i class="fa-solid fa-file-export me-1"></i>Export</button>
+      </div>
+    </div>
+  </aside>
+
+
+<main class="main">
+   <div class="d-flex justify-content-between align-items-center mb-4">
+      <h4 class="m-0" id="pageTitle">Orders</h4>
+      <div class="d-flex align-items-center gap-3">
+        <div class="input-group input-group-sm d-none d-md-flex" style="width:300px">
+          <input id="globalSearch" type="text" class="form-control" placeholder="Search products, orders or customers...">
+          <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="dropdown">
+          <a class="d-flex align-items-center text-decoration-none dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://i.pravatar.cc/40?img=12" class="avatar me-2" alt="admin">
+            <div class="text-end">
+              <div style="font-weight:600">Abdul Wahid</div>
+              <small class="text-muted">Admin</small>
+            </div>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+<div class="container mt-4">
+
+    <h3>Orders Management</h3>
+
+    <!-- FILTERS -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <select id="statusFilter" class="form-select">
+                        <option value="all">All Status</option>
+                        <option value="pending">Pending</option>
+                        <option value="processing">Processing</option>
+                        <option value="delivered">Delivered</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <input type="date" id="dateFilter" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <button class="btn btn-secondary w-100" onclick="resetFilters()">Reset</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ORDERS TABLE -->
+    <table class="table table-bordered table-hover shadow">
+        <thead class="table-dark">
+            <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Total ($)</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody id="ordersTable">
+            <tr>
+                <td>1</td>
+                <td>coys</td>
+                <td>45</td>
+                <td>pending</td>
+                <td>
+                    2025-jan-12
+                </td>
+                <td>
+                     <a href="$" class="btn btn-secondary">Edit</a>
+                <a href="$" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+             <tr>
+                <td>2</td>
+                <td>wasi</td>
+                <td>95</td>
+                <td>Delivered</td>
+                <td>
+                    2025-jan-12
+                </td>
+                <td>
+                     <a href="$" class="btn btn-secondary">Edit</a>
+                <a href="$" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+</main>
+
+<script src="assets/JS/script.js"></script>
+
+
+</body>
+</html>
